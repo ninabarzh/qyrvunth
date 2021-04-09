@@ -131,4 +131,5 @@ dmypy.json
 # Environment
 /bin
 /lib64
+/lib
 pyenv.cfg
