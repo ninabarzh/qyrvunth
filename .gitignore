@@ -129,7 +129,8 @@ dmypy.json
 .pyre/
 
 # Environment
-/bin
-/lib64
-/lib
-pyenv.cfg
+/qyrvunth/bin
+/qyrvunth/include/
+/qyrvunth/lib
+/qyrvunth/lib64
+/qyrvunth/pyenv.cfg
