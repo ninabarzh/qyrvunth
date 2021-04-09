@@ -2,7 +2,11 @@
 
 Having a go at sentiment analysis, key phrase extraction, named entity recognition, language detection ...
 
-Install python 3.8.x (at time of writing, x was 9)
+## Installation
+
+Debian 10 includes Python version 3.7. Python 3.8, the latest major release, is not available in the standard Debian 10 repositories yet.
+
+[Download python 3.8.x](https://www.python.org/downloads/source/) (at time of writing, x was 9)
 
     $ curl -O https://www.python.org/ftp/python/3.8.9/Python-3.8.9.tar.xz
 
