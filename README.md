@@ -35,3 +35,5 @@ Set up virtual environment
 Activate virtual environment
 
     $ source qyrvunth/bin/activate
+
+Within the virtual environment, you can use pip instead of pip3.8 and python instead of python3.8
