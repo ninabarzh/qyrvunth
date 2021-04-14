@@ -53,4 +53,4 @@ Install nltk and numpy
 
 Test by downloading some [datasets](http://www.nltk.org/data.html)
 
-    $ python -m nltk.downloader popular
+    $ python -m nltk.downloader all
