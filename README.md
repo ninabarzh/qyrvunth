@@ -34,10 +34,23 @@ Verify
 Set up virtual environment
 
     $ cd qyrvunth/
-    $ python3.8 -m venv qyrvunth
+    $ virtualenv -p /usr/local/bin/python3.8 venv
 
 Activate virtual environment
 
-    $ source qyrvunth/bin/activate
+    $ source venv/bin/activate
 
-Within the virtual environment, you can use pip instead of pip3.8 and python instead of python3.8
+Install pip in venv
+
+    $ pip install requests
+    $ python -m pip install --upgrade pip
+
+
+Install nltk and numpy
+
+    $ pip install nltk
+    $ pip install numpy
+
+Test by downloading some [datasets](http://www.nltk.org/data.html)
+
+    $ python -m nltk.downloader popular

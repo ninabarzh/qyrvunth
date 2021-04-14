@@ -127,10 +127,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# Environment
-/qyrvunth/bin
-/qyrvunth/include/
-/qyrvunth/lib
-/qyrvunth/lib64
-/qyrvunth/pyenv.cfg
