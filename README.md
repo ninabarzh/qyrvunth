@@ -51,6 +51,6 @@ Install nltk and numpy
     $ pip install nltk
     $ pip install numpy
 
-Test by downloading some [datasets](http://www.nltk.org/data.html)
+Test by downloading the nltk [datasets](http://www.nltk.org/data.html)
 
     $ python -m nltk.downloader all
