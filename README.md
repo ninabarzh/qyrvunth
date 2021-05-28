@@ -6,17 +6,17 @@ Having a go at sentiment analysis, key phrase extraction, named entity recogniti
 
 Debian 10 includes Python version 3.7. Python 3.8, the latest major release, is not available in the standard Debian 10 repositories yet.
 
-[Download python 3.8.x](https://www.python.org/downloads/source/) (at time of writing, x was 9)
+[Download python 3.9.x](https://www.python.org/downloads/source/) (at time of writing, x was 9)
 
-    $ curl -O https://www.python.org/ftp/python/3.8.9/Python-3.8.9.tar.xz
+    $ curl -O https://www.python.org/ftp/python/3.9.5/Python-3.9.5.tar.xz
 
 Unpack
 
-    $ tar -xf Python-3.8.9.tar.xz
+    $ tar -xf Python-3.9.5.tar.xz
 
 Configure
 
-    $ cd Python-3.8.2
+    $ cd Python-3.9.5
     $ ./configure --enable-optimizations
 
 Make altinstall (to not overwrite the default system python3 binary) 
@@ -28,13 +28,13 @@ Make altinstall (to not overwrite the default system python3 binary)
 
 Verify
 
-    $ python3.8 --version
-    Python 3.8.9
+    $ python3.9 --version
+    Python 3.9.5
 
 Set up virtual environment
 
     $ cd qyrvunth/
-    $ virtualenv -p /usr/local/bin/python3.8 venv
+    $ virtualenv -p /usr/local/bin/python3.9 venv
 
 Activate virtual environment
 
@@ -44,7 +44,6 @@ Install pip in venv
 
     $ pip install requests
     $ python -m pip install --upgrade pip
-
 
 Install nltk and numpy
 
