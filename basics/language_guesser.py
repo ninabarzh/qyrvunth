@@ -1,4 +1,4 @@
-#!venv/bin/ python3.8
+#!venv/bin/python3.9
 # coding:utf-8
 # Detecting language using a stopwords based approach
 
