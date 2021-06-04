@@ -1,4 +1,4 @@
-# Snowballing darkweb by scraping
+# Snowballing darkweb
 
 ## Requirements
 
