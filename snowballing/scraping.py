@@ -1,4 +1,3 @@
-import selenium
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium.webdriver.common.keys import Keys
@@ -9,13 +8,13 @@ import time
 import csv
 import re
 
-# Function "exploitsearch"
+# Function
 def exploitsearch():
 
     # Set the web driver to use Firefox and set the url of the hidden service to be scraped.
     url = "https://example.onion"
-    binary = FirefoxBinary(/path/to/firefox/binary)
-    driver = webdriver.Firefox(firefox_binary = binary)
+    binary = FirefoxBinary("/path/to/firefox/binary")
+    driver = webdriver.Firefox(firefox_binary=binary)
 
     # Open Tor browser and get the url.
     driver.get(url)
@@ -74,7 +73,7 @@ def exploitsearch():
     # Print final main frame
     print(listing_frame)
 
-    # Done, quit the browser
+    # Done, quit the Tor browser
     driver.quit()
 
 # Main
