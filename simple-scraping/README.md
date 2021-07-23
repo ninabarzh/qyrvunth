@@ -39,7 +39,7 @@ It offers a slightly more complex interface for handling common situations - lik
 
     $ pip3 install selenium
 
-For automation, selenium requires a driver. For firefox, get Mozilla’s Geckodriver and extract it to the `~/.local/bin` folder. Then get the path to the Tor browser Firefox binary on the local machine.
+For automation, selenium requires a driver. For firefox, get Mozilla’s Geckodriver and extract it to the `~/.local/bin` folder. Then get the path to the Firefox binary on the local machine.
 
     $ which firefox
 
