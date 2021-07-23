@@ -27,7 +27,8 @@ def is_allowed(target_url, user_agent='*'):
 # Main to demo use
 # -----------------------------------------------------------------------
 
-robots_txt_url = 'http://example.com/robots.txt'
+start_url = 'http://example.com'
+robots_txt_url = start_url + '/robots.txt'
 
 if __name__ == '__main__':
     prepare(robots_txt_url)
