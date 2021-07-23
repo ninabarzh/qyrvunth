@@ -35,8 +35,18 @@ def parsehref(response):
                 else:
                     print("Already visited %s" % href)
     else:
-        print("Got issues mate")
-
+        if response.status_code == 301:
+            print("The server is redirecting to a different endpoint")
+        elif response.status_code == 400:
+            print("Bad request")
+        elif response.status_code == 401:
+            print("We are not authenticated")
+        elif response.status_code == 403:
+            print("Can not access forbidden resources")
+        elif response.status_code == 404:
+            print("The resource is not available on the server")
+        else:
+            print("inexplicable error")
 
 if __name__ == '__main__':
     visitlist.put_nowait('http://tymyrddin.space/')
