@@ -48,6 +48,10 @@ def parsehref(response):
         else:
             print("inexplicable error")
 
+# -----------------------------------------------------------------------
+# Main
+# -----------------------------------------------------------------------
+
 if __name__ == '__main__':
     visitlist.put_nowait('http://tymyrddin.space/')
     while visitlist.empty() != True:
