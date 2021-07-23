@@ -50,26 +50,12 @@ def get_html(url):
 
 import re
 
-url_binary_regex = b'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+url_binary_regex = b'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)'
 
 def find_urls(html_binary):
     urls = re.findall(url_binary_regex, html_binary)
     urls = [url.decode('utf-8') for url in urls]
     return urls
-
-
-
-# -----------------------------------------------------------------------
-# To remain on the same website, filter urls whose netloc is external
-# -----------------------------------------------------------------------
-
-from urllib.parse import urlparse
-
-def filter_urls(urls, netloc):
-    urls = [url for url in urls if urlparse(url).netloc == netloc]
-    urls = [url for url in urls if not has_bad_format(url)]
-    return urls
-
 
 
 # -----------------------------------------------------------------------
@@ -80,6 +66,13 @@ def has_bad_format(url):
     exts = ['.gif', '.png', '.jpg']
     return any(url.find(ext) >= 0 for ext in exts)
 
+
+
+# -----------------------------------------------------------------------
+# To remain on the same website, filter urls whose netloc is external
+# -----------------------------------------------------------------------
+
+from urllib.parse import urlparse
 
 def filter_urls(urls, netloc):
     urls = [url for url in urls if urlparse(url).netloc == netloc]
@@ -96,10 +89,10 @@ def process_html(url, b_html):
 
 
 # -----------------------------------------------------------------------
-# Main
+# Main (example of use)
 # -----------------------------------------------------------------------
 
-start_url = 'http://example.com/'
+start_url = 'https://tymyrddin.space/'
 to_visit = set([start_url])
 visited = set()
 
@@ -111,7 +104,7 @@ while to_visit:
     process_html(url, html)
     
     links = find_urls(html)
-    links = filter_urls(links, 'www.example.com')
+    links = filter_urls(links, 'tymyrddin.space')
     links = set(links)
     newlinks = (links - visited) - to_visit
     

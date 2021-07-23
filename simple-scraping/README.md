@@ -1,4 +1,6 @@
-# Scraping
+# Scraping scripts
+
+These scripts are just for fun and educational purposes. Mature crawling software like Scrapy, Nutch or Heritrix do a way better job.
 
 ## Requirements
 
@@ -12,10 +14,10 @@ The `requests` library simplifies the process of making http requests: The `GET`
 
 As an alternative for simple projects, `urllib` can be used, a package that collects several modules for working with URLs. 
 
-* urllib.request for opening and reading URLs
-* urllib.error containing the exceptions raised by urllib.request
-* urllib.parse for parsing URLs
-* urllib.robotparser for parsing robots.txt files
+* urllib.request for opening and reading URLs https://docs.python.org/3.8/library/urllib.request.html
+* urllib.error containing the exceptions raised by urllib.request https://docs.python.org/3.8/library/urllib.error.html
+* urllib.parse for parsing URLs https://docs.python.org/3.8/library/urllib.parse.html
+* urllib.robotparser for parsing robots.txt files https://docs.python.org/3.8/library/urllib.robotparser
 
 It offers a slightly more complex interface for handling common situations - like basic authentication, cookies, proxies and so on.
 
@@ -25,17 +27,17 @@ It offers a slightly more complex interface for handling common situations - lik
 
     $ pip3 install beautifulsoup4
 
-`pandas` is a data manipulation package which can be used to store and export scraped data to `.json` or `.csv` files.
-
 ### Pandas
+
+`pandas` is a data manipulation package which can be used to store and export scraped data to `.json` or `.csv` files.
 
     $ pip3 install pandas
 
-`selenium` is an open-source browser tool (web driver) that allows for automating processes such as logging into a social media platform. It can execute test cases or test scripts on web applications and render web pages by running JavaScript.
-
 ### Selenium
 
-    $ pip install selenium
+`selenium` is an open-source browser tool (web driver) that allows for automating processes such as logging into a social media platform. It can execute test cases or test scripts on web applications and render web pages by running JavaScript.
+
+    $ pip3 install selenium
 
 For automation, selenium requires a driver. For firefox, get Mozilla’s Geckodriver and extract it to the `~/.local/bin` folder. Then get the path to the Tor browser Firefox binary on the local machine.
 
@@ -44,6 +46,10 @@ For automation, selenium requires a driver. For firefox, get Mozilla’s Geckodr
 or
 
     $ whereis firefox
+
+### Bloomfilter
+
+Especially recursive crawling can get out of hand fast. With bloomfilter the desired maximum number of elements and maximum false positive probability can be set https://pypi.org/project/bloom-filter2/
 
 ### Darkweb
 
