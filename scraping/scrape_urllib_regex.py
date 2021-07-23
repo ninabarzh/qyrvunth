@@ -20,7 +20,7 @@ def get_html(url):
               data=None, 
               headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'})
 
-    # send request and fetch html
+    # send request, handle the server's responses, and fetch the html 
     html = None
     try:
         html = urlopen(req)
@@ -32,12 +32,12 @@ def get_html(url):
             print('The server couldn\'t fulfill the request.')
             print('Error code: ', e.code)
 
-    # on error, simply return an empty binary string
+    # On error, simply return an empty binary string
     if html is None:
         print('Server not found')
         html = b''
 
-    # on success, read the html content into a binary string
+    # On success, read the html content into a binary string
     else: 
         html  = html.read()
 

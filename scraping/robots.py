@@ -2,7 +2,7 @@
 
 """
 Code snippets to read and understand the robots.txt file and ask 
-the parser if we can scrape a given part of the target website.  
+the parser if we can scrape a given url of the target website.  
 """
 
 # -----------------------------------------------------------------------
