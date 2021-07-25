@@ -90,7 +90,7 @@ def visit(url):
     # Do something useful here
     result = something_useful(response)
     with open('output.html', 'w') as file:
-    file.write(result)
+        file.write(result)
 
     visited.add(url)
     return response
