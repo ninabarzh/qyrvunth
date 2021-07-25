@@ -50,29 +50,27 @@ def get_html(url):
 
 import re
 
-url_binary_regex = b'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)'
-
 def find_urls(html_binary):
+
+    url_binary_regex = b'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+
     urls = re.findall(url_binary_regex, html_binary)
     urls = [url.decode('utf-8') for url in urls]
+    print(urls)
     return urls
 
 
 # -----------------------------------------------------------------------
+# Filtering:
 # Avoid image files to be able to filter using common file extensions
-# -----------------------------------------------------------------------
-
-def has_bad_format(url):
-    exts = ['.gif', '.png', '.jpg']
-    return any(url.find(ext) >= 0 for ext in exts)
-
-
-
-# -----------------------------------------------------------------------
 # To remain on the same website, filter urls whose netloc is external
 # -----------------------------------------------------------------------
 
 from urllib.parse import urlparse
+
+def has_bad_format(url):
+    exts = ['.gif', '.png', '.jpg']
+    return any(url.find(ext) >= 0 for ext in exts)
 
 def filter_urls(urls, netloc):
     urls = [url for url in urls if urlparse(url).netloc == netloc]
@@ -83,16 +81,47 @@ def filter_urls(urls, netloc):
 # -----------------------------------------------------------------------
 # Iterate and visit the new urls
 # -----------------------------------------------------------------------
+from bs4 import BeautifulSoup
+
+def something_useful(b_html):
+
+    soup = BeautifulSoup(b_html, 'html.parser')
+
+    # Search for the main div (the div with the most paragraphs)
+
+    ps = soup.select('p')
+    parents = [p.parent for p in ps]
+
+    def count_child_paragraphs(element):
+        return len(element.findAll('p', recurvise=False))
+
+    parents.sort(key = count_child_paragraphs, reverse=True)
+    main_div = parents[0]
+
+    # Add the main title (h1) if it's not already there
+
+    if not main_div.findAll('h1'):
+        titles = soup.findAll('h1')
+        if titles:
+            main_title = titles[0]
+            main_div.insert(0, main_title)
+
+    return str(main_div)
+
 def process_html(url, b_html):
-    # do something useful here 
+
+    # Do something useful here
+    result = something_useful(b_html)
+
     print('Visiting url : {}'.format(url))
+    print(result)
 
 
 # -----------------------------------------------------------------------
-# Main (example of use)
+# Main loop
 # -----------------------------------------------------------------------
 
-start_url = 'https://tymyrddin.space/'
+start_url = 'https://tymyrddin.space/portfolio.html'
 to_visit = set([start_url])
 visited = set()
 
