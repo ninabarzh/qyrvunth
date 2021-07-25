@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
 """
-Simple script to fetch all pages of a http site using 
-- urllib
-- regular expressions
+Simple script to gather links for further link analysis of an 
+organisation (using urllib and regular expressions).
 """
 
 # -----------------------------------------------------------------------
@@ -18,7 +17,7 @@ def get_html(url):
     # construct http request for the given url 
     req = Request(url,
               data=None, 
-              headers={'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'})
+              headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'})
 
     # send request, handle the server's responses, and fetch the html 
     html = None
@@ -81,47 +80,18 @@ def filter_urls(urls, netloc):
 # -----------------------------------------------------------------------
 # Iterate and visit the new urls
 # -----------------------------------------------------------------------
-from bs4 import BeautifulSoup
-
-def something_useful(b_html):
-
-    soup = BeautifulSoup(b_html, 'html.parser')
-
-    # Search for the main div (the div with the most paragraphs)
-
-    ps = soup.select('p')
-    parents = [p.parent for p in ps]
-
-    def count_child_paragraphs(element):
-        return len(element.findAll('p', recurvise=False))
-
-    parents.sort(key = count_child_paragraphs, reverse=True)
-    main_div = parents[0]
-
-    # Add the main title (h1) if it's not already there
-
-    if not main_div.findAll('h1'):
-        titles = soup.findAll('h1')
-        if titles:
-            main_title = titles[0]
-            main_div.insert(0, main_title)
-
-    return str(main_div)
 
 def process_html(url, b_html):
-
-    # Do something useful here
-    result = something_useful(b_html)
-
+    # Possibly do something useful here
     print('Visiting url : {}'.format(url))
-    print(result)
 
 
 # -----------------------------------------------------------------------
 # Main loop
 # -----------------------------------------------------------------------
 
-start_url = 'https://tymyrddin.space/portfolio.html'
+netloc = 'tymyrddin.space'
+start_url = 'https://' + netloc
 to_visit = set([start_url])
 visited = set()
 
