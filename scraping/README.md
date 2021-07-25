@@ -16,7 +16,7 @@ Of its power, its control
 
 When inundated with information
 
-Or unbearably clear
+Or unbearably unclear
 
 It can scrape away the overload
 
