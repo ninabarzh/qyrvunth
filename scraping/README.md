@@ -1,57 +1,33 @@
-# Scraping scripts
+# Scraping
 
-These scripts are just for fun and educational purposes. Mature crawling software like Scrapy, Nutch or Heritrix do a way better job.
+Before web services came along, screen scraping was a popular technique for grabbing the output from another application by examining the text it displays on the screen. Scraping is not entirely extinct yet. For web applications, this means making a request to a URL and examining the HTML the server returns. 
 
-## Requirements
+You can then parse the HTML to grab the latest news headlines or stock quotes, or do some reconnaissance on an organisation or opposing team, snowball the darkweb, mine github and gitlab for identities (and who knows, a password or two), ... 
 
-### Requests
+Oh dear, this can get out of hand real quickly.
 
-The `requests` library simplifies the process of making http requests: The `GET` request can be used to retrieve information from a web server (download the HTML content of a specified web page) and makes it very easy to use proxies that require authentication. The `POST` request can be used to post form data. And he requests library 
+## Ode to the Scraper
 
-    $ pip3 install requests
+I'm looking at this scraper
 
-### Urllib
+And feel envious
 
-As an alternative for simple projects, `urllib` can be used, a package that collects several modules for working with URLs. 
+Of its power, its control
 
-* urllib.request for opening and reading URLs https://docs.python.org/3.8/library/urllib.request.html
-* urllib.error containing the exceptions raised by urllib.request https://docs.python.org/3.8/library/urllib.error.html
-* urllib.parse for parsing URLs https://docs.python.org/3.8/library/urllib.parse.html
-* urllib.robotparser for parsing robots.txt files https://docs.python.org/3.8/library/urllib.robotparser
+When inundated with information
 
-It offers a slightly more complex interface for handling common situations - like basic authentication, cookies, proxies and so on.
+Or unbearably clear
 
-### Beautifulsoup
+It can scrape away the overload
 
-`beautifulsoup` is a Python library that can extract (parse) HTML data and can turn even invalid markup into a parse tree.
+No matter how tough the entire payload
 
-    $ pip3 install beautifulsoup4
+It can always be relied upon to clean up the excess
 
-### Pandas
+Why isn't life so easy?
 
-`pandas` is a data manipulation package which can be used to store and export scraped data to `.json` or `.csv` files.
+When for us the going gets tough, we are forced to look through it
 
-    $ pip3 install pandas
+There is no easy scraping our way to a clear image
 
-### Selenium
-
-`selenium` is an open-source browser tool (web driver) that allows for automating processes such as logging into a social media platform. It can execute test cases or test scripts on web applications and render web pages by running JavaScript.
-
-    $ pip3 install selenium
-
-For automation, selenium requires a driver. For firefox, get Mozilla’s Geckodriver and extract it to the `~/.local/bin` folder. Then get the path to the Firefox binary on the local machine.
-
-    $ which firefox
-
-or
-
-    $ whereis firefox
-
-### Bloomfilter
-
-Especially recursive crawling can get out of hand fast. With bloomfilter the desired maximum number of elements and maximum false positive probability can be set https://pypi.org/project/bloom-filter2/
-
-### Darkweb
-
-* When [snowballing the darkweb]snowballing-darkweb.py) one needs a Tor browser or [Whonix workstation VM](https://github.com/tymyrddin/orchard/blob/main/mitigations/virtualisation/kvm/Whonix.md). The Tor browser is based on Firefox.
- 
+In final words, Ode to the Scraper!

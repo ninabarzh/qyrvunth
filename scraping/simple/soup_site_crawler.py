@@ -39,7 +39,7 @@ def get_response(url):
 # -----------------------------------------------------------------------
 
 def isurlabsolute(url):
-    return bool(urlparse(url).netloc)
+    return bool(urlparse(url).netloc == netloc)
 
 
 def find_urls(response):
@@ -51,8 +51,6 @@ def find_urls(response):
             href = str(href)
             if href not in visited:
                 visitlist.put_nowait(href)
-            else:
-                print("Already visited %s" % href)
 
 
 # -----------------------------------------------------------------------
@@ -91,7 +89,8 @@ def visit(url):
 
     # Do something useful here
     result = something_useful(response)
-    print(result)
+    with open('output.html', 'w') as file:
+    file.write(result)
 
     visited.add(url)
     return response

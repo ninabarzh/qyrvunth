@@ -18,7 +18,7 @@ def get_html(url):
     # construct http request for the given url 
     req = Request(url,
               data=None, 
-              headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'})
+              headers={'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'})
 
     # send request, handle the server's responses, and fetch the html 
     html = None
