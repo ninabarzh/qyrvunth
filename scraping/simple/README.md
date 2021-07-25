@@ -1,6 +1,6 @@
 # Simple scraping scripts
 
-These scripts are just simple scripts for fun and educational purposes. Mature crawling software like Scrapy, Nutch or Heritrix do a way better job.
+These scripts are just simple scripts for fun and educational purposes. Mature crawling software like [Scrapy](../projects/README.md), Nutch or Heritrix do a way better job.
 
 ## Requirements
 
