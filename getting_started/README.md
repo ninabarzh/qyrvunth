@@ -51,7 +51,4 @@ or
 
 Especially recursive crawling can get out of hand fast. With bloomfilter the desired maximum number of elements and maximum false positive probability can be set with a [Bloom filter](https://pypi.org/project/bloom-filter2/)
 
-### Darkweb
-
-When [snowballing the darkweb]snowballing-darkweb.py) one needs a Tor browser or [Whonix workstation VM](https://github.com/tymyrddin/orchard/blob/main/mitigations/virtualisation/kvm/Whonix.md). The Tor browser is based on Firefox.
  

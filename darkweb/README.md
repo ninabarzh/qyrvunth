@@ -4,7 +4,7 @@
 
 Requires the `requests`, `beautifulsoup`, `pandas` and `re` libraries.Pandas is a data manipulation package which can be used to store and export scraped data scraped to `.json` or `.csv` files.
 
-When snowballing the darkweb by scraping one needs a Tor browser or [Whonix workstation VM](https://github.com/tymyrddin/orchard/blob/main/mitigations/virtualisation/kvm/Whonix.md).
+When snowballing the darkweb by scraping one needs a Tor browser or [Whonix workstation VM](https://github.com/tymyrddin/orchard/blob/main/mitigations/virtualisation/kvm/Whonix.md). The Tor browser is based on Firefox.
 
 Selenium is a browser automation package useful for crawling websites and extracting data. For automation, selenium requires a driver. The Tor browser is based on Firefox. 
 
