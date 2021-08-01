@@ -1,13 +1,33 @@
-# Qyrvunth, the Insane
+# Qyrvunth
 
-Having a go at crawling, scraping, sentiment analysis, key phrase extraction, named entity recognition, language detection ...
+Before web services came along, screen scraping was a popular technique for grabbing the output from another application by examining the text it displays on the screen. Scraping is not entirely extinct yet. For web applications, this means making a request to a URL and examining the HTML the server returns. 
 
-## Dragon - A Haiku
+One can then parse the HTML to grab the latest news headlines or stock quotes, or do some reconnaissance on an organisation or opposing team, snowball the darkweb, mine github and gitlab for identities (and who knows, a password or two), and while scrapy was originally designed for web scraping, it can also be used to extract data using APIs or as a general purpose web crawler.
 
-by qyrvunth
+Oh dear, this can get out of hand real quickly ...
 
-Distracted shining
+## Ode to the Scraper
 
-A grey dragon sings
+I'm looking at this scraper
 
-at ther old best friend
+And feel envious
+
+Of its power, its control
+
+When inundated with information
+
+Or unbearably unclear
+
+It can scrape away the overload
+
+No matter how tough the entire payload
+
+It can always be relied upon to clean up the excess
+
+Why isn't life so easy?
+
+When for us the going gets tough, we are forced to look through it
+
+There is no easy scraping our way to a clear image
+
+In final words, Ode to the Scraper!
