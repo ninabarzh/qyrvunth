@@ -1,4 +1,4 @@
-# Simple scraping scripts
+# Getting started
 
 These scripts are just simple scripts for fun and educational purposes. Mature crawling software like [Scrapy](../projects/README.md), Nutch or Heritrix do a way better job.
 
